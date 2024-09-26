@@ -1,12 +1,19 @@
 import random
 def bubble(bubble_list):
     length = len(bubble_list)
+    times = 0
     for x in range(length):
+        times += 1
+        sorted = True
         for y in range(length-x-1):
             if bubble_list[y] > bubble_list[y+1]:
                 keep = bubble_list[y]
                 bubble_list[y] = bubble_list[y+1]
                 bubble_list[y+1] = keep
+                sorted = False
+        if sorted == True:
+            break
+    print(times)
     return bubble_list
 
 def main():
